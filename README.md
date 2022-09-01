@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+##项目搭建
+###安装
+   1. 全局安装  
+      全局安装create-rect-app    
+        npm install -g create-rect-app  
+      创建一个项目  
+        create-rect-app 项目名称
+   2. 临时安装
+        npx create-rect-app 项目名称  
+###运行  
+   1. 启动项目  
+       npm star
+   2. 测试项目  
+       npm test
+   3. 发布  
+       npm run build
+###书写
+   1. 在src/index.js中(必须),导入react核心库 
+       import React from 'react' 
