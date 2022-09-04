@@ -4,6 +4,7 @@ import BScroll from "better-scroll"
 
 class App extends Component{
     state = {
+        filterData: '',
         cinemas: [],
     }
 
@@ -36,19 +37,36 @@ class App extends Component{
     render() {
         return (
             <div>
+                <div>
+                    <input value={this.state.filterData} onChange={(event)=>{this.filterByData(event.target.value)}}/>
+                </div>
                 <div className="wrapper" style={{background: "red", height:"200px", overflow: "hidden"}}>
                     <ul className="content">
                         {
-                            this.state.cinemas.map(item=>{
-                                return <li key={item.cinemaId}>
-                                    {item.name}
-                                </li>
-                            })
+                            this.getFilterList(this.state.cinemas, this.state.filterData.toUpperCase())
                         }
                     </ul>
                 </div>
             </div>
         )
+    }
+
+    getFilterList(cinemas, filterData) {
+        const list = this.state.cinemas.filter(item=>{
+            return item.name.toUpperCase().indexOf(filterData) >= 0 || item.address.toUpperCase().indexOf(filterData) >= 0
+        })
+
+        return list.map(item=>{
+                return <li key={item.cinemaId}>
+                        {item.name}
+                       </li>
+        })
+    }
+
+    filterByData(value) {
+        this.setState({
+            filterData: value,
+        })
     }
 }
 
