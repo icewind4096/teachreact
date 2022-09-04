@@ -13,6 +13,7 @@ import RectDOM from 'react-dom'
 // import App from './01_base/13_state_sync.js'
 // import App from './01_base/14_betterScroll.js'
 // import App from './01_base/16_props.js'
-import App from './01_base/17_propsFunction.js'
+// import App from './01_base/17_propsFunction.js'
+import App from './01_base/18_form.js'
 
 RectDOM.render(<App/>, document.getElementById("root"))
