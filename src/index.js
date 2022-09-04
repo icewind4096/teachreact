@@ -10,6 +10,7 @@ import RectDOM from 'react-dom'
 // import App from './01_base/09_forloop.js'
 // import App from './01_base/10_todoList.js'
 // import App from './01_base/12_tab.js'
-import App from './01_base/13_state_sync.js'
+// import App from './01_base/13_state_sync.js'
+import App from './01_base/14_betterScroll.js'
 
 RectDOM.render(<App/>, document.getElementById("root"))
