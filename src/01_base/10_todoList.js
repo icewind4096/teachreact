@@ -6,7 +6,16 @@ class App extends Component{
     constructor() {
         super();
         this.state = {
-            todos: ["1", "2", "3"]
+            todos: [
+                {
+                    name: "1",
+                    done: true,
+                },
+                {
+                    name: "2",
+                    done: false,
+                }
+                ]
         }
     }
 
@@ -18,8 +27,9 @@ class App extends Component{
                 <ul>
                     {
                         this.state.todos.map(item =>
-                            <li key={item}>{item}
-                                <span dangerouslySetInnerHTML={{__html: item}}></span>
+                            <li key={item.name}>
+                                <span dangerouslySetInnerHTML={{__html: item.name}}></span>
+                                <input type="checkbox" checked={item.done} onChange={(event)=>{this.todoDone(event, item.name)}}/>
                                 <button onClick={()=>{this.btnDelClick(item)}}>移除</button>
                             </li>)
                     }
@@ -32,7 +42,7 @@ class App extends Component{
 
     btnAddClick() {
         let list = [...this.state.todos]
-        list.push(this.todoContend.current.value)
+        list.push({name: this.todoContend.current.value, done: false})
         this.todoContend.current.value = ""
         this.todoContend.current.focus()
         this.setState({
@@ -45,6 +55,18 @@ class App extends Component{
         list.splice(list.indexOf(item), 1)
         this.setState({
             todos: list,
+        })
+    }
+
+    todoDone(event, key) {
+        let list = [...this.state.todos];
+        list.forEach((item)=>{
+            if (item.name === key){
+                item.done = true;
+            }
+        })
+        this.setState({
+            todos: [...list]
         })
     }
 }
