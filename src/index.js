@@ -18,6 +18,7 @@ import RectDOM from 'react-dom'
 // import App from './02_advance/01_child2Parent.js'
 // import App from './02_advance/02_childParent_form.js'
 // import App from './02_advance/03_childParent_form_ref.js'
-import App from './02_advance/04_middlePerson.js'
+// import App from './02_advance/04_middlePerson.js'
+import App from './02_advance/05_publishSubscription.js'
 
 RectDOM.render(<App/>, document.getElementById("root"))
