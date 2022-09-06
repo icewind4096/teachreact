@@ -43,7 +43,7 @@ class Cinema extends Component{
                 <div>
                     {
                         this.state.cinemas.map(item=>{
-                            return <dl key={item.cinemaId}>
+                            return <dl key={item.cinemaId} onClick={()=>this.props.clientEvent(item)}>
                                 <dt>{item.name}</dt>
                                 <dd>{item.address}</dd>
                             </dl>
