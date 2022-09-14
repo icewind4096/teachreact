@@ -22,6 +22,7 @@ import RectDOM from 'react-dom'
 // import App from './02_advance/05_publishSubscription.js'
 // import App from './02_advance/06_prov.js'
 // import App from './02_advance/10_slot.js'
-import App from './02_advance/11_NewlifeCycle.js'
+//import App from './02_advance/11_NewlifeCycle.js'
+import App from './02_advance/23_newCycleSample'
 
 RectDOM.render(<App/>, document.getElementById("root"))
