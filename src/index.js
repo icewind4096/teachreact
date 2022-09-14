@@ -23,6 +23,9 @@ import RectDOM from 'react-dom'
 // import App from './02_advance/06_prov.js'
 // import App from './02_advance/10_slot.js'
 //import App from './02_advance/11_NewlifeCycle.js'
-import App from './02_advance/23_newCycleSample'
+//import App from './02_advance/23_newCycleSample'
+// import App from './02_advance/25_swiper_sync.js'
+// import App from './02_advance/26_swiper_async.js'
+import App from './02_advance/27_swiper_component.js'
 
 RectDOM.render(<App/>, document.getElementById("root"))
