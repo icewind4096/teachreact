@@ -29,6 +29,7 @@ import RectDOM from 'react-dom'
 // import App from './02_advance/27_swiper_component.js'
 // import App from './03_hook/01_useState'
 // import App from './03_hook/02_todoList'
-import App from './03_hook/03_useEffect.js'
+// import App from './03_hook/03_useEffect.js'
+import App from './03_hook/04_useEffect_2.js'
 
 RectDOM.render(<App/>, document.getElementById("root"))
