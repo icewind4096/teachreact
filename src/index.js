@@ -32,6 +32,7 @@ import RectDOM from 'react-dom'
 // import App from './03_hook/03_useEffect.js'
 // import App from './03_hook/04_useEffect_2.js'
 // import App from './03_hook/05_useEffect_3.js'
-import App from './03_hook/07_useCallback'
+// import App from './03_hook/07_useCallback'
+import App from './03_hook/08_todoList_useCallback'
 
 RectDOM.render(<App/>, document.getElementById("root"))
