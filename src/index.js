@@ -37,6 +37,7 @@ import RectDOM from 'react-dom'
 // import App from './03_hook/09_useMemo'
 // import App from './03_hook/10_useRef'
 // import App from './03_hook/12_context'
-import App from './03_hook/13_useReducer'
+// import App from './03_hook/13_useReducer.js'
+import App from './03_hook/14_useReducer_muilt.js'
 
 RectDOM.render(<App/>, document.getElementById("root"))
