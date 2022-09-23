@@ -8,7 +8,7 @@ import {useState} from "react";
 import Login from "../views/Login";
 
 export default function IndexRouter(props){
-    const [login, setLogin] = useState(false)
+    const [login, setLogin] = useState(true)
 
     return (
         <HashRouter>
@@ -19,8 +19,8 @@ export default function IndexRouter(props){
                 <Route path='/cinemas' component={Cinemas}></Route>
 
                 {/*<Route path='/center' component={Center}></Route>*/}
-                <Route path='/center' render={()=> {
-                    return login === true ? <Center/> : <Redirect to={'/login'}/>
+                <Route path='/center' render={(props)=> {
+                    return login === true ? <Center {...props}/> : <Redirect to={'/login'}/>
                 }}>
                 </Route>
 

@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {withRouter} from "react-router-dom";
 
 export default function NowPlaying(props){
     const [cinemas, setCinemas] = useState([])
@@ -28,7 +29,7 @@ export default function NowPlaying(props){
             NowPlaying
 
             <div>
-                <FilmList clinemas={cinemas} history={props}></FilmList>
+                <FilmList clinemas={cinemas} {...props}></FilmList>
                 {/*<FilmInfo></FilmInfo>*/}
             </div>
         </div>
@@ -36,12 +37,30 @@ export default function NowPlaying(props){
 }
 
 function FilmList(props){
-    // const history = useHistory()
+    return (
+        <div style={{background: "red"}}>
+            <ul>
+                {
+                    props.clinemas.map((item)=>{
+                        return (
+                            // <FilmInfo {...item} {...props}></FilmInfo>
+                            <WithFileInfo {...item}></WithFileInfo>
+                        )
+                    })
+                }
+            </ul>
+        </div>
+    )
+}
 
+function FilmInfo(props){
     function handleClinemaClick(cinemaId) {
         // 三种跳转方式
-        props.history.history.push("/cinemadetail/" + cinemaId)
+        // console.log(props1)
+        props.history.push("/cinemadetail/" + cinemaId)
+
         // window.location.href = "#/cinemadetail/" + cinemaId
+
         // history.push("/cinemadetail/" + cinemaId)
 
         // props.history.history.push({
@@ -54,27 +73,13 @@ function FilmList(props){
     }
 
     return (
-        <div style={{background: "red"}}>
-            <ul>
-                {
-                    props.clinemas.map((item, index)=>{
-                        return (
-                            <li key={index} onClick={()=>{
-                                handleClinemaClick(item.cinemaId)
-                            }}>{item.name}
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-        </div>
-    )
-}
-
-function FilmInfo(){
-    return (
         <div style={{background: "yellowgreen"}}>
-
+            <li key={props.cinemaId} onClick={()=>{
+                handleClinemaClick(props.cinemaId)
+            }}>{props.name}
+            </li>
         </div>
     )
 }
+
+const WithFileInfo = withRouter(FilmInfo)
