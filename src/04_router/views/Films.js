@@ -1,8 +1,6 @@
 import {Redirect, Route, Switch} from "react-router-dom";
 import NowPlaying from "./Films/NowPlaying";
 import Comingsoon from "./Films/Comingsoon";
-import {createContext, useContext, useEffect, useReducer, useState} from "react";
-import axios from "axios";
 
 export default function Films(){
     return (

@@ -1,6 +1,5 @@
-import {createContext, useEffect, useReducer, useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
-import {useHistory} from "react-router";
 
 export default function NowPlaying(props){
     const [cinemas, setCinemas] = useState([])
