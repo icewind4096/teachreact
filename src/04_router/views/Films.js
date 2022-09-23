@@ -1,4 +1,4 @@
-import {Redirect, Route, Switch} from "react-router-dom";
+import {NavLink, Redirect, Route, Switch} from "react-router-dom";
 import NowPlaying from "./Films/NowPlaying";
 import Comingsoon from "./Films/Comingsoon";
 
@@ -7,7 +7,14 @@ export default function Films(){
         <div>
             <div style={{height: "200px", background: "yellow"}}></div>
 
-            <div>导航栏</div>
+            <ul>
+                <li>
+                    <NavLink to={"/films/nowplaying"}>电影院列表</NavLink>
+                </li>
+                <li>
+                    <NavLink to={"/films/comingsoon"}>即将上映</NavLink>
+                </li>
+            </ul>
 
             <Switch>
                 <Route path="/films/nowplaying" component={NowPlaying}/>
