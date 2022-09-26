@@ -1,5 +1,16 @@
+import {useEffect} from "react";
+
 export default function App(props){
-    console.log(props)
+    useEffect(()=>{
+        console.log("cinema detail create")
+
+        //store.dispatch
+
+        return () => (
+            console.log("cinema detail destory")
+        )
+    }, [])
+
     return (
         <div>
             detail
