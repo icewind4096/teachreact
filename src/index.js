@@ -40,6 +40,7 @@ import RectDOM from 'react-dom'
 // import App from './03_hook/13_useReducer.js'
 // import App from './03_hook/14_useReducer_muilt.js'
 // import App from './03_hook/15_userReducer_async.js'
-import App from './04_router/App.js'
+// import App from './04_router/App.js'
+import App from './05_redux/App.js'
 
 RectDOM.render(<App/>, document.getElementById("root"))
