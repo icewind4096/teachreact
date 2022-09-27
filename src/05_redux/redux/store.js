@@ -1,26 +1,14 @@
 //1.引入redux
 //2.createStore(reducer)
 
-import {createStore} from "redux";
+import {combineReducers, createStore} from "redux";
+import TabberReducer from "./reducers/TabberReducer.js";
+import CityReducer from "./reducers/CityReducer.js";
 
-const reducer = (preState, action)=>{
-    console.log(action)
-    let newState = {...preState}
-
-    switch (action.type){
-        case 'hideTabbar': {
-            newState.showTabber = false
-            break
-        }
-        case 'showTabbar':{
-            newState.showTabber = true
-            break
-        }
-        default: break
-    }
-
-    return newState
-}
+const reducer = combineReducers({
+    TabberReducer: TabberReducer,
+    CityReducer: CityReducer,
+})
 
 const store = createStore(reducer)
 

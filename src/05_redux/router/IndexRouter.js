@@ -6,6 +6,7 @@ import NotFound from "../views/NotFound";
 import CinemaDetail from "../views/CinemaDetail.js";
 import {useState} from "react";
 import Login from "../views/Login";
+import City from "../views/city/City.js";
 
 export default function IndexRouter(props){
     const [login, setLogin] = useState(true)
@@ -17,6 +18,8 @@ export default function IndexRouter(props){
                 <Route path='/films' component={Films}></Route>
 
                 <Route path='/cinemas' component={Cinemas}></Route>
+
+                <Route path='/city' component={City}></Route>
 
                 {/*<Route path='/center' component={Center}></Route>*/}
                 <Route path='/center' render={(props)=> {

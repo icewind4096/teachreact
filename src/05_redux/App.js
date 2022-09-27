@@ -13,7 +13,7 @@ export default class App extends Component{
         store.subscribe(()=>{
             this.setState(
                 {
-                    showTabber: store.getState().showTabber,
+                    showTabber: store.getState().TabberReducer.showTabber,
                 }
             )
         })
