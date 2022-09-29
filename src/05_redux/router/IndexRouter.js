@@ -7,6 +7,7 @@ import CinemaDetail from "../views/CinemaDetail.js";
 import {useState} from "react";
 import Login from "../views/Login";
 import City from "../views/city/City.js";
+import Cinemasearch from "../views/Cinemasearch";
 
 export default function IndexRouter(props){
     const [login, setLogin] = useState(true)
@@ -17,7 +18,9 @@ export default function IndexRouter(props){
             <Switch>
                 <Route path='/films' component={Films}></Route>
 
-                <Route path='/cinemas' component={Cinemas}></Route>
+                <Route path='/cinemas' component={Cinemas} exact></Route>
+
+                <Route path='/cinemas/search' component={Cinemasearch}></Route>
 
                 <Route path='/city' component={City}></Route>
 

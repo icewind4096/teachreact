@@ -6,6 +6,7 @@ import TabberReducer from "./reducers/TabberReducer.js";
 import CityReducer from "./reducers/CityReducer.js";
 import CinemaReducer from "./reducers/CinemaReducer";
 import reduxThunk from "redux-thunk"
+import reduxPromise from "redux-promise"
 
 const reducer = combineReducers({
     TabberReducer: TabberReducer,
@@ -13,6 +14,6 @@ const reducer = combineReducers({
     CinemaReducer: CinemaReducer,
 })
 
-const store = createStore(reducer, applyMiddleware(reduxThunk))
+const store = createStore(reducer, applyMiddleware(reduxThunk, reduxPromise))
 
 export default store

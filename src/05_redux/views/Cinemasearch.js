@@ -1,9 +1,9 @@
-import {useEffect, useState} from "react";
-import store from "../redux/store.js";
+import {useEffect, useRef, useState} from "react";
+import store from "../redux/store";
 import getCinemasAction from "../actionCreateor/getCinemasAction";
 
-export default function Cinemas(props){
-    const [cityName, setCityName] = useState(store.getState().CityReducer.cityName)
+export default function Cinemasearch(){
+    let searchRef = useRef();
     const [cinemas, setCinemas] = useState(store.getState().CinemaReducer.cinemas)
 
     useEffect(()=>{
@@ -13,8 +13,8 @@ export default function Cinemas(props){
             setCinemas(store.getState().CinemaReducer.cinemas)
         }
 
-        var unsubscribe = store.subscribe(()=>{
-            setCinemas(store.getState().CinemaReducer.cinemas)
+        let unsubscribe = store.subscribe(()=>{
+            setCinemas(store.getState().CinemaReducer.resultData)
         })
 
         return () => {
@@ -25,10 +25,13 @@ export default function Cinemas(props){
 
     return (
         <div>
-            <div style={{overflow: "hidden"}}>
-                <div style={{float: 'left'}} onClick={()=>{props.history.push('/city')}}>{cityName}</div>
-                <div style={{float: 'right'}} onClick={()=>{props.history.push('/cinemas/search')}}>搜索</div>
-            </div>
+            <input ref={searchRef} type="text" style={{width: "200px"}}></input>
+            <button onClick={()=>{
+                store.dispatch({
+                    type:'searchCinema',
+                    value: searchRef.current.value,
+                })
+            }}>查询</button>
             <ul>
                 {
                     cinemas.map((item)=>{

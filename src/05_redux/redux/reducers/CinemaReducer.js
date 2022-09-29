@@ -1,5 +1,6 @@
 const CinemaReducer = (preState = {
     cinemas: [],
+    resultData: [],
 }, action) =>{
     let newState = {...preState}
 
@@ -7,6 +8,14 @@ const CinemaReducer = (preState = {
         case 'reloadCinemas': {
             newState.cinemas = action.value
             break
+        }
+        case 'searchCinema': {
+            newState.resultData = newState.cinemas.filter((item)=>{
+                if (item.name.indexOf(action.value) >= 0){
+                    return item
+                }
+            })
+            break;
         }
         default: break
     }

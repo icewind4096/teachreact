@@ -14,12 +14,13 @@ export default function NowPlaying(props){
             setCinemas(store.getState().CinemaReducer.cinemas)
         }
 
-        store.subscribe(()=>{
+        var unsubscribe = store.subscribe(()=>{
             setCinemas(store.getState().CinemaReducer.cinemas)
         })
 
         return () => {
-            console.log("移除订阅??????????????????????????????")
+            console.log("移除订阅")
+            unsubscribe()
         }
     }, [])
 
