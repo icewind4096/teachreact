@@ -41,6 +41,14 @@ import RectDOM from 'react-dom'
 // import App from './03_hook/14_useReducer_muilt.js'
 // import App from './03_hook/15_userReducer_async.js'
 // import App from './04_router/App.js'
-import App from './05_redux/App.js'
+// import App from './05_redux/App.js'
+import App from './06_react_redux/App.js'
+import {Provider} from 'react-redux'
+import {store, persistor} from './06_react_redux/redux/store'
+import {PersistGate} from "redux-persist/integration/react";
 
-RectDOM.render(<App/>, document.getElementById("root"))
+RectDOM.render( <Provider store={store}>
+                    <PersistGate loading={null} persistor={persistor}>
+                        <App/>
+                    </PersistGate>
+                </Provider>, document.getElementById("root"))
